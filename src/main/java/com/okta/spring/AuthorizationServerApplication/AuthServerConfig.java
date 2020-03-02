@@ -38,7 +38,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient(ClientID)
-                .secret(passwordEncoder.encode(ClientSecret))
+                .secret(ClientSecret)
                 .authorizedGrantTypes("authorization_code")
                 .scopes("openid")
                 .autoApprove(true)
